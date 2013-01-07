@@ -12,7 +12,7 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
+  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secure: true, secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
 
   class AdminCookieAuth
     def initialize(app)
@@ -30,8 +30,6 @@ if ENV['COOKIE_SECRET']
     end
   end
   use AdminCookieAuth
-
-  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
 end
 
 run Sidekiq::Web
