@@ -7,7 +7,13 @@ Sidekiq.configure_client do |config|
   config.redis = { :size => 1 }
 end
 
-module Rack
+
+if ENV['COOKIE_SECRET']
+  require 'rack/ssl'
+  use Rack::SSL
+
+  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
+
   class AdminCookieAuth
     def initialize(app)
       @app = app
@@ -15,8 +21,6 @@ module Rack
 
     def call(env)
       puts env['rack.session']
-      req = Rack::Request.new(env)
-      puts req.env['rack.session']
       if 1 == 2
         @app.call(env)
       else
@@ -24,14 +28,9 @@ module Rack
       end
     end
   end
-end
-
-if ENV['COOKIE_SECRET']
-  require 'rack/ssl'
-  use Rack::SSL
+  use AdminCookieAuth
 
   use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
-  use Rack::AdminCookieAuth
 end
 
 run Sidekiq::Web
