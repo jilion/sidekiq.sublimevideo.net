@@ -1,4 +1,6 @@
-sidekiq.sublimevideo.net
-========================
+# SublimeVideo's Sidekiq dashboard app
 
-Sidekiq Dashboard standalone application
+- https://sidekiq.sublimevideo.net
+
+------------
+Copyright (c) 2010 - 2013 Jilion(r) - SublimeVideo and Jilion are registered trademarks.
