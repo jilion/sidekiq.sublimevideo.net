@@ -13,7 +13,7 @@
   url   = git@github.com:jilion/sidekiq.sublimevideo.net.git
   fetch = +refs/heads/*:refs/remotes/origin/*
 
-[remote "heroku"]
+[remote "production"]
   url   = git@heroku.com:sv-sidekiq.git
   fetch = +refs/heads/master:refs/remotes/production/master
   push  = master:master
@@ -24,4 +24,4 @@
   database = true
 
 [heroku]
-  remote = heroku
+  remote = production

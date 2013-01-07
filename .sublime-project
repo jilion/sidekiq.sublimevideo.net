@@ -1,0 +1,9 @@
+{
+  "folders":
+  [
+    {
+      "path": "~/Projects/Jilion/Products/SublimeVideo/sidekiq.sublimevideo.net",
+      "folder_exclude_patterns": ["vendor/cache", "vendor/ruby"]
+    }
+  ]
+}
