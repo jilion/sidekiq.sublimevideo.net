@@ -30,7 +30,7 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  use Rack::Session::Cookie, key: 'sublimevideo_session', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
+  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
   use Rack::AdminCookieAuth
 end
 
