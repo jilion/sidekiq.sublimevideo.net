@@ -20,8 +20,8 @@ if ENV['COOKIE_SECRET']
     end
 
     def call(env)
-      puts env['rack.session']
-      puts env.inspect
+      req = Rack::Request.new(env)
+      puts req.cookies["rack.session"]
       if 1 == 2
         @app.call(env)
       else
