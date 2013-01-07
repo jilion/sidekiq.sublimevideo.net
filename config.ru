@@ -20,7 +20,7 @@ if ENV['COOKIE_SECRET']
 
     def call(env)
       req = Rack::Request.new(env)
-      cookie_hash = req.cookies["rack.session"]["remember_admin_token"]
+      cookie_hash = req.cookies["remember_admin_token"]
       verifier = ActiveSupport::MessageVerifier.new(ENV['COOKIE_SECRET'])
       verifier.verify(cookie_hash)
       @app.call(env)
