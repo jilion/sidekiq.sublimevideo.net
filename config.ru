@@ -24,7 +24,8 @@ if ENV['COOKIE_SECRET']
       verifier = ActiveSupport::MessageVerifier.new(ENV['COOKIE_SECRET'])
       verifier.verify(cookie_hash)
       @app.call(env)
-    rescue
+    rescue => ex
+      puts ex
       [302, {'Location' => 'https://admin.sublimevideo.net'}, ['Redirected to https://admin.sublimevideo.net']]
     end
   end
