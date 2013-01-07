@@ -20,8 +20,8 @@ if ENV['COOKIE_SECRET']
     end
 
     def call(env)
-      puts env.inspect
       puts env['rack.session']
+      puts env.inspect
       if 1 == 2
         @app.call(env)
       else
