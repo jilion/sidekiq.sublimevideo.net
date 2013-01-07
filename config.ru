@@ -12,7 +12,7 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secure: true, secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
+  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secure: true, secret: ENV['COOKIE_SECRET']
 
   class AdminCookieAuth
     def initialize(app)
@@ -20,7 +20,11 @@ if ENV['COOKIE_SECRET']
     end
 
     def call(env)
+      a = env["rack.session"]
+      puts a
       req = Rack::Request.new(env)
+      a = env["rack.session"]
+      puts a
       puts req.cookies
       puts req.cookies["rack.session"]
       if 1 == 2
