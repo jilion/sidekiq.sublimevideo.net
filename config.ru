@@ -15,7 +15,7 @@ module Rack
 
     def call(env)
       req = Rack::Request.new(env)
-      puts request.env['rack.session']
+      puts req.env['rack.session']
       if 1 == 2
         @app.call(env)
       else
