@@ -14,6 +14,7 @@ module Rack
     end
 
     def call(env)
+      puts env['rack.session']
       req = Rack::Request.new(env)
       puts req.env['rack.session']
       if 1 == 2
@@ -29,7 +30,7 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  use Rack::Session::Cookie, key: 'sublimevideo_session', path: '/', secret: ENV['COOKIE_SECRET']
+  use Rack::Session::Cookie, key: 'sublimevideo_session', path: '/', secret: ENV['COOKIE_SECRET'], domain: '.sublimevideo.net'
   use Rack::AdminCookieAuth
 end
 
