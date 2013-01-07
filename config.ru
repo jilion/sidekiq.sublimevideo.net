@@ -12,26 +12,20 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  use Rack::Session::Cookie, key: 'remember_admin_token', path: '/', secure: true, secret: ENV['COOKIE_SECRET']
-
+  require 'active_support/message_verifier'
   class AdminCookieAuth
     def initialize(app)
       @app = app
     end
 
     def call(env)
-      a = env["rack.session"]
-      puts a
       req = Rack::Request.new(env)
-      a = env["rack.session"]
-      puts a
-      puts req.cookies
-      puts req.cookies["rack.session"]
-      if 1 == 2
-        @app.call(env)
-      else
-        [302, {'Location' => 'https://admin.sublimevideo.net'}, ['Redirected to https://admin.sublimevideo.net']]
-      end
+      cookie_hash = req.cookies["rack.session"]["remember_admin_token"]
+      verifier = ActiveSupport::MessageVerifier.new(ENV['COOKIE_SECRET'])
+      verifier.verify(cookie_hash)
+      @app.call(env)
+    rescue
+      [302, {'Location' => 'https://admin.sublimevideo.net'}, ['Redirected to https://admin.sublimevideo.net']]
     end
   end
   use AdminCookieAuth
