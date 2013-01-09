@@ -14,7 +14,7 @@ if ENV['COOKIE_SECRET']
   require 'rack/cookie_auth'
   use Rack::CookieAuth,
     cookie_secret: ENV['COOKIE_SECRET'],
-    cookie_name: 'remember_admin_token'
+    cookie_name: 'remember_admin_token',
     redirect_to: 'https://admin.sublimevideo.net',
     return_to_param_key: 'admin_return_to'
 end
