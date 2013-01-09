@@ -15,7 +15,7 @@ if ENV['COOKIE_SECRET']
   use Rack::DeviseCookieAuth,
     secret: ENV['COOKIE_SECRET'],
     resource: 'admin',
-    redirect_to: 'https://admin.sublimevideo.net'
+    redirect_to: 'https://admin.sublimevideo.net/login'
 end
 
 run Sidekiq::Web
