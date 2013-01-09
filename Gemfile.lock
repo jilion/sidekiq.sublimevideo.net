@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/jilion/rack-cookie_auth.git
-  revision: f16c3c35d4893bcf4afb0001ca6cb0ee9081145e
+  remote: git://github.com/jilion/rack-devise_cookie_auth.git
+  revision: 2b57630efee6f2e9181d575acd31f1a7117ba031
   specs:
-    rack-cookie_auth (0.0.1)
+    rack-devise_cookie_auth (0.1.0)
       activesupport (>= 2.3.2)
       rack (>= 1.0)
 
@@ -55,7 +55,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   puma
-  rack-cookie_auth!
+  rack-devise_cookie_auth!
   rack-ssl
   sidekiq
   sinatra

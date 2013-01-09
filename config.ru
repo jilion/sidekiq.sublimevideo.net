@@ -11,12 +11,11 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  require 'rack/cookie_auth'
-  use Rack::CookieAuth,
-    cookie_secret: ENV['COOKIE_SECRET'],
-    cookie_name: 'remember_admin_token',
-    redirect_to: 'https://admin.sublimevideo.net',
-    return_to_param_key: 'admin_return_to'
+  require 'rack/devise_cookie_auth'
+  use Rack::DeviseCookieAuth,
+    secret: ENV['COOKIE_SECRET'],
+    resource: 'admin',
+    redirect_to: 'https://admin.sublimevideo.net'
 end
 
 run Sidekiq::Web
