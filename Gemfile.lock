@@ -1,7 +1,15 @@
+GIT
+  remote: git://github.com/jilion/rack-cookie_auth.git
+  revision: f16c3c35d4893bcf4afb0001ca6cb0ee9081145e
+  specs:
+    rack-cookie_auth (0.0.1)
+      activesupport (>= 2.3.2)
+      rack (>= 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.10)
+    activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
     celluloid (0.12.4)
@@ -45,9 +53,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
   bundler
   puma
+  rack-cookie_auth!
   rack-ssl
   sidekiq
   sinatra
