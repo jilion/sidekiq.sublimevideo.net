@@ -7,6 +7,9 @@ Sidekiq.configure_client do |config|
   config.redis = { :size => 1 }
 end
 
+require 'rack/status'
+use Rack::Status
+
 if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
