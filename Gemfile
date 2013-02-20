@@ -6,7 +6,7 @@ gem 'bundler'
 
 gem 'puma'
 
-gem 'sidekiq'
+gem 'sidekiq', github: 'jilion/sidekiq', branch: 'fix_dashboard_realtime'
 gem 'sinatra'
 gem 'slim'
 gem 'rack-ssl'
