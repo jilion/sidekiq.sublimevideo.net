@@ -4,7 +4,7 @@ ruby '2.0.0'
 
 gem 'bundler'
 
-gem 'puma'
+gem 'thin'
 
 gem 'sidekiq'
 gem 'sinatra'

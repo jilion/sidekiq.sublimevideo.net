@@ -1,1 +1,1 @@
-web: bundle exec puma -p $PORT
+web: bundle exec thin start -p $PORT -e $RACK_ENV

@@ -4,7 +4,7 @@ require 'sidekiq'
 require 'sidekiq/web'
 
 Sidekiq.configure_client do |config|
-  config.redis = { size: 5 }
+  config.redis = { size: 2 }
 end
 
 require 'rack/status'
