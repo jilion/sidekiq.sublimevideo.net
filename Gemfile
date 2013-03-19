@@ -7,7 +7,7 @@ gem 'bundler'
 gem 'thin'
 
 gem 'sidekiq'
-gem 'sinatra'
+gem 'sinatra', '~> 1.3.0'
 gem 'slim'
 gem 'rack-ssl'
 gem 'rack-status'
