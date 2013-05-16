@@ -9,37 +9,34 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.12)
-      i18n (~> 0.6)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
       multi_json (~> 1.0)
-    celluloid (0.12.4)
-      facter (>= 1.6.12)
+    celluloid (0.14.0)
       timers (>= 1.0.0)
     connection_pool (1.0.0)
     daemons (1.1.9)
     eventmachine (1.0.3)
     eventmachine (1.0.3-java)
-    facter (1.6.18)
-    i18n (0.6.4)
-    multi_json (1.7.2)
+    i18n (0.6.1)
+    json (1.8.0)
+    json (1.8.0-java)
+    multi_json (1.7.3)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
     rack-ssl (1.3.3)
       rack
     rack-status (1.0.0)
-    redis (3.0.3)
-    redis-namespace (1.2.1)
+    redis (3.0.4)
+    redis-namespace (1.3.0)
       redis (~> 3.0.0)
-    sidekiq (2.10.0)
-      celluloid (~> 0.12.0)
-      connection_pool (~> 1.0)
-      i18n
-      multi_json (~> 1)
-      redis (~> 3)
+    sidekiq (2.12.0)
+      celluloid (>= 0.14.0)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0)
       redis-namespace
-      sinatra
-      slim
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -47,7 +44,7 @@ GEM
     slim (1.3.8)
       temple (~> 0.6.3)
       tilt (~> 1.3.3)
-    temple (0.6.3)
+    temple (0.6.4)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
