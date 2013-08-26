@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/jilion/rack-devise_cookie_auth.git
+  remote: git://github.com/jilion/rack-devise_cookie_auth.git
   revision: f88f909f008d793c47dbc46590cca6ab19ff5552
   specs:
     rack-devise_cookie_auth (0.1.0)
