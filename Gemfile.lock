@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/jilion/rack-devise_cookie_auth.git
-  revision: f88f909f008d793c47dbc46590cca6ab19ff5552
+  revision: 55b8b2bf02b9733426b91da2e81f709c756dc778
   specs:
-    rack-devise_cookie_auth (0.1.0)
-      activesupport (>= 2.3.2)
+    rack-devise_cookie_auth (1.0.0)
+      activesupport (>= 4.0.0)
       rack (>= 1.0)
 
 GEM
