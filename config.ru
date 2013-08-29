@@ -14,11 +14,15 @@ if ENV['COOKIE_SECRET']
   require 'rack/ssl'
   use Rack::SSL
 
-  require 'rack/devise_cookie_auth'
-  use Rack::DeviseCookieAuth,
-    secret: ENV['COOKIE_SECRET'],
-    resource: 'admin',
-    redirect_to: 'https://admin.sublimevideo.net/login'
+  use Rack::Auth::Basic, "Protected Area" do |username, password|
+    username == 'jilion' && password == ENV['AUTH_PASSWORD']
+  end
+
+  # require 'rack/devise_cookie_auth'
+  # use Rack::DeviseCookieAuth,
+  #   secret: ENV['COOKIE_SECRET'],
+  #   resource: 'admin',
+  #   redirect_to: 'https://admin.sublimevideo.net/login'
 end
 
 run Sidekiq::Web
